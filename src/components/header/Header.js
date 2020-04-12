@@ -1,25 +1,26 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
   const [toggle, setToggle] = useState(false);
-  const [collapsedNav, setCollapsedNav] = useState("collapse");
+  const [collapsedNav, setCollapsedNav] = useState('collapse');
 
   const handleClick = () => {
-    setCollapsedNav("collapsing");
+    setCollapsedNav('collapsing');
     setToggle((currenToggleState) => !currenToggleState);
-    setCollapsedNav("collapse");
+    setCollapsedNav('collapse');
   };
 
-  const collapsedButton = toggle ? "" : "collapsed";
-  const show = toggle ? "show" : "";
+  const collapsedButton = toggle ? '' : 'collapsed';
+  const show = toggle ? 'show' : '';
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <NavLink className="navbar-brand" to="/">
+    <nav id="nav" className="navbar navbar-expand-lg navbar-light">
+      <NavLink id="navText" className="navbar-brand" to="/">
         Home
       </NavLink>
       <button
+        id="navToggler"
         className={`navbar-toggler ${collapsedButton}`}
         onClick={handleClick}
         type="button"
@@ -38,6 +39,7 @@ export default function Header() {
       >
         <div className="navbar-nav">
           <NavLink
+            id="navText"
             className="nav-item nav-link"
             to="/pokedex"
             activeClassName="active"
