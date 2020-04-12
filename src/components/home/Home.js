@@ -6,7 +6,7 @@ export default function Header() {
     <main>
       <div className="container">
         <div className="jumbotron">
-          <h1 className="display-4">Hello, world!</h1>
+          <h1 className="display-4">Poke-Front</h1>
           <p className="lead">
             This is a simple hero unit, a simple jumbotron-style component for
             calling extra attention to featured content or information.
@@ -17,7 +17,7 @@ export default function Header() {
             out within the larger container.
           </p>
           <Link className="btn btn-primary btn-lg" to="/pokedex" role="button">
-            Learn more
+            Explore
           </Link>
         </div>
       </div>

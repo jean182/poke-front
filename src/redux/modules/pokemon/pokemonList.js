@@ -50,7 +50,7 @@ export default function reducer(state = initialState, action = {}) {
         isLoading: true,
       };
     case LOAD_MORE_POKEMON_SUCCEED:
-      const newPokemonList = action.payload.data.results;
+      const newPokemonList = action.payload.data;
       const { pokemonList } = state;
       return {
         ...state,

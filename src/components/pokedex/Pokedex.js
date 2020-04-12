@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
 import _ from 'lodash';
-//import { getId } from '../../helpers/pokemonUtils';
+
 import {
   loadPokemon,
   sortedPokemon,
@@ -15,7 +15,7 @@ import PokedexItem from './PokedexItem';
 export function Pokedex(props) {
   const { getPokemonList, error, loading, pokemonList } = props;
 
-  const [currentCount, setCurrentCount] = useState(30);
+  const [currentCount, setCurrentCount] = useState(2);
 
   useEffect(() => {
     if (isEmpty(pokemonList)) {
@@ -23,18 +23,15 @@ export function Pokedex(props) {
     }
   }, [pokemonList, getPokemonList]);
 
-  //if (loading) return <p>Loading</p>;
   if (_.isEmpty(pokemonList) && loading) return <PokedexLoader />;
-  if (!isEmpty(error)) return <p>ERROR</p>;
+  if (!isEmpty(error)) return <p>ERROR {error}</p>;
 
   const handleScroll = (event) => {
     const { loadMoreActionCreator } = props;
     const element = event.target;
     if (element.scrollHeight - element.scrollTop === element.clientHeight) {
       loadMoreActionCreator(currentCount);
-      setCurrentCount({
-        currentCount: currentCount + 30,
-      });
+      setCurrentCount(currentCount + 1);
     }
   };
 
@@ -44,11 +41,11 @@ export function Pokedex(props) {
         <div
           class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
           onScroll={handleScroll}
+          style={{ height: '750px', overflow: 'auto' }}
         >
           {pokemonList.map((pokemon) => {
             console.log(pokemon);
             const { pokedexNumber, name } = pokemon;
-            //const id = getId(url);
             return (
               <div key={pokedexNumber} class="col mb-4">
                 <PokedexItem id={pokedexNumber} name={name} />
