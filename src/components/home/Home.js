@@ -8,13 +8,15 @@ export default function Header() {
         <div className="jumbotron">
           <h1 className="display-4">Poke-Front</h1>
           <p className="lead">
-            This is a simple hero unit, a simple jumbotron-style component for
-            calling extra attention to featured content or information.
+            This is a list of Pokémon in the order dictated by the National
+            Pokédex.
           </p>
           <hr className="my-4" />
           <p>
-            It uses utility classes for typography and spacing to space content
-            out within the larger container.
+            The 896 Pokémon are organized by their number in the National
+            Pokédex. The National Pokédex is subdivided into regional Pokédex
+            series, each revolving around species introduced at the time of
+            their respective generations along with older generations.
           </p>
           <Link className="btn btn-primary btn-lg" to="/pokedex" role="button">
             Explore

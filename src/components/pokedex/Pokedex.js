@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
-import _ from 'lodash';
 
 import {
   loadPokemon,
@@ -23,7 +22,7 @@ export function Pokedex(props) {
     }
   }, [pokemonList, getPokemonList]);
 
-  if (_.isEmpty(pokemonList) && loading) return <PokedexLoader />;
+  if (isEmpty(pokemonList) && loading) return <PokedexLoader />;
   if (!isEmpty(error)) return <p>ERROR {error}</p>;
 
   const handleScroll = (event) => {
@@ -39,7 +38,7 @@ export function Pokedex(props) {
     <>
       <main className="navbar navbar-expand flex-column flex-md-row bd-navbar">
         <div
-          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
+          className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
           onScroll={handleScroll}
           style={{ height: '750px', overflow: 'auto' }}
         >
