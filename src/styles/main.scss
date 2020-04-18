@@ -1,1 +1,82 @@
-@import "~bootstrap"
+@import '~bootstrap';
+@import url('//db.onlinewebfonts.com/c/073a3b73a63a87e100f6bb8f003fc0d3?family=Flexo + Light');
+
+@font-face {
+  font-family: 'Flexo Light';
+  src: url('//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot');
+  src: url('//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/073a3b73a63a87e100f6bb8f003fc0d3.svg#Flexo Light')
+      format('svg');
+}
+
+body {
+  font-family: 'Flexo Light', arial, sans-serif;
+  background-color: #727272;
+  overflow: hidden;
+}
+
+#nav {
+  background-color: #e3350d;
+  border-radius: 0.25em;
+  margin: 1em;
+}
+
+#navText {
+  color: white;
+}
+
+#navToggler {
+  border: 1px solid white;
+}
+
+#pokemonSprite {
+  width: 7.5em;
+  margin: auto;
+}
+
+#pokedexItem {
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+#pokemonCount {
+  color: white;
+  text-align: center;
+}
+
+#grass {
+  background-color: #9bcc50;
+  border: 1px solid #f9ffda;
+}
+
+#poison {
+  background-color: #b97fc9;
+  border: 1px solid #f3c5ff;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
